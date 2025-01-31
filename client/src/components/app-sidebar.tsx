@@ -30,7 +30,7 @@ export function AppSidebar() {
     const agents = query?.data?.agents;
 
     return (
-        <Sidebar>
+        <Sidebar variant="inset" collapsible="icon">
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
@@ -43,12 +43,12 @@ export function AppSidebar() {
                                     className="size-7"
                                 />
 
-                                <div className="flex flex-col gap-0.5 leading-none">
+                                <small className="flex flex-col gap-0.5 leading-none">
                                     <span className="font-semibold">
                                         ElizaOS
                                     </span>
                                     <span className="">v{info?.version}</span>
-                                </div>
+                                </small>
                             </NavLink>
                         </SidebarMenuButton>
                     </SidebarMenuItem>

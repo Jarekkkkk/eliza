@@ -165,7 +165,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
     });
 
     return (
-        <div className="flex flex-col w-full h-[calc(100dvh)] p-4">
+        <div className="flex flex-col w-full h-[calc(100dvh)] p-4 col-span-1">
             <div className="flex-1 overflow-y-auto">
                 <ChatMessageList ref={messagesContainerRef}>
                     {transitions((styles, message) => {
