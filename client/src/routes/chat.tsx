@@ -9,8 +9,8 @@ export default function AgentRoute() {
     if (!agentId) return <div>No data.</div>;
 
     return (
-        <div className="w-full border grid grid-cols-3 h-full">
-            <div className="border-r col-span-2">{<PTBBuilderView />}</div>
+        <div className="w-svw grid grid-cols-4 h-full">
+            <div className="border-r col-span-3">{<PTBBuilderView />}</div>
             {<Chat agentId={agentId} />}
         </div>
     );

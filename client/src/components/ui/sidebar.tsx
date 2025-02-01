@@ -147,7 +147,7 @@ const SidebarProvider = React.forwardRef<
                             } as React.CSSProperties
                         }
                         className={cn(
-                            "group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-card",
+                            "group/sidebar-wrapper min-h-svh w-full has-[[data-variant=inset]]:bg-card",
                             className
                         )}
                         ref={ref}
@@ -227,7 +227,7 @@ const Sidebar = React.forwardRef<
         return (
             <div
                 ref={ref}
-                className="group peer md:block text-sidebar-foreground"
+                className="group peer text-sidebar-foreground"
                 data-state={state}
                 data-collapsible={state === "collapsed" ? collapsible : ""}
                 data-variant={variant}

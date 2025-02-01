@@ -18,13 +18,13 @@ export default function Home() {
     const query = useQuery({
         queryKey: ["agents"],
         queryFn: () => apiClient.getAgents(),
-        refetchInterval: 5_000
+        refetchInterval: 5_000,
     });
 
     const agents = query?.data?.agents;
 
     return (
-        <div className="flex flex-col gap-4 h-full p-4">
+        <div className="flex flex-col gap-4 h-full p-4 ml-60">
             <PageTitle title="Agents" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {agents?.map((agent: { id: UUID; name: string }) => (

@@ -6,20 +6,23 @@ import { useToast } from "@/hooks/use-toast";
 
 export const PTBBuilderView = () => {
     const account = useCurrentAccount();
-    const [network, setNetwork] = React.useState<
-        "mainnet" | "testnet" | "devnet"
-    >("testnet");
-    const [ptb, setPtb] = React.useState<PTB_SCHEME | undefined>(undefined);
-    const [backup, setBackup] = React.useState<PTB_SCHEME | undefined>(
+
+    const [ptb, _setPtb] = React.useState<PTB_SCHEME | undefined>({
+        version: "2",
+        modules: {},
+    });
+    const [_backup, setBackup] = React.useState<PTB_SCHEME | undefined>(
         undefined
     );
-    const excuteTx = async (transaction: Transaction | undefined) => {};
+    const excuteTx = async (transaction: Transaction | undefined) => {
+        console.log({ transaction });
+    };
     const { toast } = useToast();
     return (
         <div style={{ width: "100%", height: "100%" }}>
             <PTBBuilder
                 wallet={account?.address}
-                network={network}
+                network={"testnet"}
                 excuteTx={excuteTx}
                 restore={ptb}
                 update={(file: PTB_SCHEME) => {
