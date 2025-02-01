@@ -7,18 +7,16 @@ import { useToast } from "@/hooks/use-toast";
 export const PTBBuilderView = () => {
     const account = useCurrentAccount();
 
-    console.log({ account });
-    const [ptb, _setPtb] = React.useState<PTB_SCHEME | undefined>({
+    const [ptb, setPtb] = React.useState<PTB_SCHEME | undefined>({
         version: "2",
         modules: {},
     });
-    const [_backup, setBackup] = React.useState<PTB_SCHEME | undefined>(
-        undefined
-    );
     const excuteTx = async (transaction: Transaction | undefined) => {
         console.log({ transaction });
     };
     const { toast } = useToast();
+
+    console.log({ ptb });
     return (
         <div style={{ width: "100%", height: "100%" }}>
             <PTBBuilder
@@ -27,8 +25,7 @@ export const PTBBuilderView = () => {
                 excuteTx={excuteTx}
                 restore={ptb}
                 update={(file: PTB_SCHEME) => {
-                    setBackup(file);
-                    // console.log(value);
+                    setPtb(file);
                 }}
                 options={{
                     canEdit: true,
