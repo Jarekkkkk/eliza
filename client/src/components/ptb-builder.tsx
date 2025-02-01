@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 export const PTBBuilderView = () => {
     const account = useCurrentAccount();
 
+    console.log({ account });
     const [ptb, _setPtb] = React.useState<PTB_SCHEME | undefined>({
         version: "2",
         modules: {},

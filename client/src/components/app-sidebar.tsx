@@ -18,6 +18,8 @@ import { NavLink, useLocation } from "react-router";
 import { type UUID } from "@elizaos/core";
 import { Book, Cog, User } from "lucide-react";
 import ConnectionStatus from "./connection-status";
+import { ConnectButton } from "@mysten/dapp-kit";
+import "@mysten/dapp-kit/dist/index.css";
 
 export function AppSidebar() {
     const location = useLocation();
@@ -98,6 +100,7 @@ export function AppSidebar() {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
+                <ConnectButton />
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <NavLink
